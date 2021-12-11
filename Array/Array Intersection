@@ -1,0 +1,72 @@
+You have been given two integer arrays/list(ARR1 and ARR2) of size N and M, respectively. 
+You need to print their intersection; An intersection for this problem can be defined when both the arrays/lists contain a particular value or to put it in other words, 
+when there is a common value that exists in both the arrays/lists.
+
+------------------------------------------------
+Approach 1:
+//complexity O(n^2)
+
+void intersection(int *input1, int *input2, int size1, int size2)
+{
+    //Write your code here
+    for(int i=0;i<size1;i++){
+        for(int j=0;j<size2;j++){
+            if(input1[i]==input2[j]){
+                cout<<input2[j]<<" ";
+                input2[j]=-0.00005;
+                break;
+            }
+        }
+    }
+}
+-------------------------------------------
+Approach 1:
+//complexity O(n)
+void swap(int *a,int *b){
+    int t=*a;
+    *a=*b;
+    *b=t;
+}
+int partition (int arr[], int low, int high) 
+{ 
+    int pivot = arr[high]; 
+    int i = (low - 1); 
+    for (int j = low; j <= high - 1; j++) 
+    { 
+        if (arr[j] < pivot) 
+        { 
+            i++; 
+            swap(&arr[i], &arr[j]); 
+        } 
+    } 
+    swap(&arr[i + 1], &arr[high]); 
+    return (i + 1); 
+} 
+void quickSort(int arr[], int low, int high) 
+{ 
+    if (low < high) 
+    { 
+        int pi = partition(arr, low, high); 
+        quickSort(arr, low, pi - 1); 
+        quickSort(arr, pi + 1, high); 
+    } 
+} 
+void intersection(int *arr1, int *arr2, int n, int m) 
+{
+       quickSort(arr2,0,m-1);
+       quickSort(arr1,0,n-1);
+
+    int i=0,j=0;
+    while(i<n && j<m){
+        if(arr1[i]==arr2[j]){
+            cout<<arr1[i]<<" ";
+            i++,j++;
+        }
+        else if(arr1[i]<arr2[j]){
+            i++;
+        }
+        else{
+            j++;
+        }
+    }
+}
