@@ -1,0 +1,53 @@
+You have been given a linked list of integers. Your task is to write a function that inserts a node at a given position, 'pos'.
+
+------------------------------
+//iterative approach
+
+Node* insertNode(Node *head,int i,int data){
+    Node *newNode = new Node(data);
+    int count=0;
+    Node *temp=head;
+    if(i==0){
+        newNode -> next=head;
+        head=newNode;
+        return head;
+    }
+    while(temp != NULL && count<i-1){
+        temp = temp -> next;
+        count++;
+    }
+    if(temp!=NULL){
+    Node *a = temp -> next;
+    temp -> next =newNode;
+    newNode ->  next=a;
+    //OR
+    //newNode -> next = temp-> next;
+    //temp -> next = newNode;
+    }
+    return head;
+}
+
+----------------------------------
+//recursive approach
+
+Node* insertNode(Node *head, int i, int data) {
+	// Write your code here
+    if(head==NULL)
+        return NULL;
+    if(i==0){
+        Node* temp=new Node(data);
+        temp->next=head;
+        return temp;
+    }
+    
+    if(i==1){
+        Node* temp=new Node(data);
+        temp->next=head->next;
+        head->next=temp;
+        return head;
+    }
+    Node* curr=insertNode(head->next,i-1,data);
+    
+    return head;
+    
+}
