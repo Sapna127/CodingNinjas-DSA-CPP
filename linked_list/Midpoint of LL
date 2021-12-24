@@ -1,0 +1,57 @@
+For a given singly linked list of integers, find and return the node present at the middle of the list.
+
+-------------------------
+//approach 1
+int length(Node *head) {
+    
+    int count=0;
+    while(head)
+    {
+        count++;
+        head=head->next;
+    }
+    return count;
+}
+void printIthNode(Node *head, int i)
+{
+    //Write your code here
+    int count=0;
+    Node *current = head;
+    while(current!=NULL){
+        if(count == i){
+           cout<<current->data<<endl;
+        }
+        count++;
+        current=current->next;
+        
+    }
+}
+
+Node *midPoint(Node *head)
+{
+    // Write your code here
+    if(head==NULL){
+        return NULL;
+    }
+    int len=length(head);
+    int x=(len-1)/2;
+    printIthNode(head,x);
+}
+
+-------------------------------------------------------
+//approach 2
+
+Node *midPoint(Node *head)
+{
+    if (head == NULL)
+    {
+        return head;
+    }
+    Node *slow = head, *fast = head;
+    while (fast->next != NULL && fast->next->next != NULL)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
