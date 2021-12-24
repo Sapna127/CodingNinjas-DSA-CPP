@@ -1,0 +1,17 @@
+For a given a singly linked list of integers and a position 'i', print the node data at the 'i-th' position.
+-------------------------
+
+void printIthNode(Node *head, int i)
+{
+    int count = 0;
+    Node *current = head;
+    while (current != NULL)
+    {
+        if (count == i)
+        {
+            cout << current->data << endl;
+        }
+        count++;
+        current = current->next;
+    }
+}
