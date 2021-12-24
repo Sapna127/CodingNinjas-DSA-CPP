@@ -3,6 +3,44 @@ To explain it further, you need to start printing the data from the tail and mov
 printing the head data at the end.
 
 --------------------------------------------
+//iterative approach
+Node* reverse(Node* head)
+{
+if(head==NULL)
+        return head  ;
+    
+    if(head->next==NULL)
+    { 
+   		return head ;
+    }
+    
+    Node* prev = NULL ;
+    Node* cur = head ;
+    Node* nextnd = head->next ;
+    
+    while(cur->next!=NULL)
+    {
+        cur->next = prev ;
+        prev = cur ;
+        cur = nextnd ;
+        nextnd = nextnd->next ;
+        
+        if(nextnd==NULL)
+        {
+            cur->next = prev ;
+            prev = cur ;
+            break ;
+        }
+    }
+    
+    head = prev;
+    
+    return head ;
+}
+----------------------------------------------
+
+//recursive approach
+
 void printReverse(Node *head){
     if(head==NULL){
         return;
