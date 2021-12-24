@@ -1,0 +1,23 @@
+You have been given a singly linked list of integers where the elements are sorted in ascending order. 
+Write a function that removes the consecutive duplicate values 
+such that the given list only contains unique elements and returns the head to the updated list.
+
+--------------------------------------------
+
+Node *removeDuplicates(Node *head)
+{
+ if(head==NULL || head->next == NULL)
+ return head;
+  if(head->data == head->next->data)
+  {
+      Node* temp=head;
+      head=head->next;
+      temp->next=NULL;
+      delete temp; 
+      return removeDuplicates(head);
+  }
+  else{
+  head->next =removeDuplicates(head->next);
+  return head;
+  }
+}
