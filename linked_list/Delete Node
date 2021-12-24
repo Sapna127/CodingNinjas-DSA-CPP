@@ -3,6 +3,7 @@ Your task is to write a function that deletes a node from a given position, 'POS
 
 -------------------------------------------------------------------
 
+//iterative approach
 
 Node* deleteNode(Node *head, int pos)
 {
@@ -26,4 +27,21 @@ Node* deleteNode(Node *head, int pos)
      free(temp->next);
     temp->next = next; 
     return head;
+}
+
+
+//recursive approach
+
+Node *deleteNodeRec(Node *head, int pos) {
+	//Write your code here
+    if(head==NULL){
+        return NULL;
+    }
+    
+    if(pos==0){
+        Node *temp=head->next;
+        delete(head);
+        return temp;
+    }
+    head->next=deleteNodeRec(head->next,pos-1);
 }
