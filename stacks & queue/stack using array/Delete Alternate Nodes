@@ -1,0 +1,54 @@
+Given a Singly Linked List of integers, delete all the alternate nodes in the list.
+
+-------------------
+
+
+/*********************************************************
+ 
+    // Following is the node structure
+
+    class Node {
+    public:
+        int data;
+        Node * next;
+        Node(int data){
+            this -> data = data;
+            this -> next = NULL;
+        }
+    
+        ~Node() {
+            if(next) {
+                delete next;
+            }
+        }
+    };
+
+*********************************************************/
+int length(Node *head) {
+    
+    int count=0;
+    while(head)
+    {
+        count++;
+        head=head->next;
+    }
+    return count;
+}
+
+void deleteAlternateNodes(Node *head) {
+    Node *currentNode = head;
+
+    while (currentNode != NULL && currentNode->next != NULL) 
+    {	
+        // The variable temp stores the next node of currentNode
+        Node *temp = currentNode->next;
+        
+        currentNode->next = currentNode->next->next;
+        temp->next = NULL;
+        
+        // Delete temp node
+        delete temp;
+    currentNode = currentNode->next;
+    }
+   
+}
