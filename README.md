@@ -5,5 +5,7 @@ Topicwise collection of all problems & their solutions from the coding ninjas DS
   
   ~ Linked list
   
+  ~ stack & queue
+  
   
   p.s. repo get updated as soon as i learn new topics
