@@ -9,4 +9,6 @@ Topicwise collection of all problems & their solutions from the coding ninjas DS
   
   ~ Trees
   
+  ~ Binary trees
+  
   p.s. repo get updated as soon as i learn new topics
