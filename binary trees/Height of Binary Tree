@@ -1,0 +1,24 @@
+For a given Binary Tree of integers, find and return the height of the tree.
+
+Height is defined as the total number of nodes along the longest path from the root to any of the leaf node.
+
+Sample Input 1:
+10 20 30 40 50 -1 -1 -1 -1 -1 -1
+Sample Output 1:
+3
+Sample Input 2:
+3 -1 -1
+Sample Output 2:
+1
+--------------
+int height(BinaryTreeNode<int>* root) {
+    // Write our code here
+    if(root==NULL)
+        return 0;
+    int l=height(root->left)+1;
+    int r=height(root->right)+1;
+    if(l>r)
+        return l;
+    else
+        return r;
+}
