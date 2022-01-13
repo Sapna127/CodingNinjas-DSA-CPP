@@ -1,0 +1,32 @@
+For a given a Binary Tree of type integer, find and return the minimum and the maximum data values.
+Return the output as an object of Pair class, which is already created.
+
+--------------------
+
+
+/*
+	The first value of the pair must be the minimum value in the tree and 
+	the second value of the pair must be the maximum value in the tree
+*/
+pair<int, int> getMinAndMax(BinaryTreeNode<int> *root) {
+	// Write your code here
+   if(root->left==NULL && root->right==NULL){
+       pair<int,int> p;
+       p.first= root->data;
+       p.second= root->data;
+       return p;
+   }
+   pair<int,int> ans;
+    ans.first=ans.second=root->data;
+    if(root->left){
+        pair<int , int> leftans=getMinAndMax(root->left);
+        ans.first=min(ans.first,leftans.first);
+        ans.second=max(ans.second,leftans.second);
+    }
+    if(root->right){
+        pair<int , int> rightans=getMinAndMax(root->right);
+        ans.first=min(ans.first,rightans.first);
+        ans.second=max(ans.second,rightans.second);
+    }
+    return ans;
+}
