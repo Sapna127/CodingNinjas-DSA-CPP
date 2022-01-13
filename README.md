@@ -11,4 +11,4 @@ Topicwise collection of all problems & their solutions from the coding ninjas DS
   
   ~ Binary trees
   
-  p.s. repo get updated as soon as i learn new topics
+  p.s. the repo gets updated as soon as i learn new topics
