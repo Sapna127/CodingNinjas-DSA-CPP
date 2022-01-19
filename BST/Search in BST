@@ -1,0 +1,22 @@
+Given a BST and an integer k. Find if the integer k is present in given BST or not.
+You have to return true, if node with data k is present, return false otherwise.
+Note: Assume that BST contains all unique elements.
+
+--------------------------
+
+bool searchInBST(BinaryTreeNode<int> *root , int k) {
+	// Write your code here
+    if(root==NULL)
+        return false;;
+    int s=root->data;
+    if(s==k)
+        return true;
+     else if(s<k)
+        searchInBST(root->right,k);
+    else if(s>k){
+        searchInBST(root->left,k);
+    }
+    else{
+        return false;
+    }
+}
