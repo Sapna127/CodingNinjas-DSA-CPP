@@ -1,0 +1,17 @@
+Given a Binary Search Tree and two integers k1 and k2, find and print the elements which are in range k1 and k2 (both inclusive).
+Print the elements in increasing order.
+
+--------------------
+
+void elementsInRangeK1K2(BinaryTreeNode<int>* root, int k1, int k2) {
+	// Write your code here
+    if(root==NULL)
+        return;
+    int r=root->data;
+    if(r>k1)
+        elementsInRangeK1K2(root->left,k1,k2);
+    if(k1<=r && k2>=r)
+        cout<<r<<" ";
+    if(r<k2)
+        elementsInRangeK1K2(root->right,k1,k2);
+}
