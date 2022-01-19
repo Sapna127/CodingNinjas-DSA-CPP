@@ -1,0 +1,45 @@
+Given a BST, convert it into a sorted linked list. You have to return the head of LL.
+
+-----------------
+
+class base{
+    public:
+    Node<int>* head;
+    Node<int>* tail;
+};
+
+base tree(BinaryTreeNode<int>* root){
+    if(root==NULL){
+        base b;
+        b.head=NULL;
+        b.tail=NULL;
+        return b;
+    }
+    base left = tree(root->left);
+    base right = tree(root->right);
+    Node<int>* n = new Node<int>(root->data);
+    if(left.tail!=NULL){
+        left.tail->next=n;
+    }
+    n->next = right.head;
+    base b;
+    if(left.head!=NULL){
+        b.head=left.head;
+    }
+    else{
+        b.head=n;
+    }
+    if(right.tail!=NULL){
+        b.tail=right.tail;
+    }
+    else{
+        b.tail=n;
+    }
+    
+    return b;
+}
+Node<int>* constructLinkedList(BinaryTreeNode<int>* root) {
+	// Write your code here
+    base tree1=tree(root);
+    return tree1.head;
+}
