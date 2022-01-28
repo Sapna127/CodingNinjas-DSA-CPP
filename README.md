@@ -1,18 +1,20 @@
 # CodingNinjas DSA CPP
 Topicwise collection of all problems & their solutions from the coding ninjas DSA in cpp course
 
-  ~ Arrays & Strings
+  - Arrays & Strings
   
-  ~ Linked list
+  - Linked list
   
-  ~ stack & queue
+  - stack & queue
   
-  ~ Trees
+  - Trees
   
-  ~ Binary trees
+  - Binary trees
   
-  ~ BST
+  - BST
   
-  ~ Priority Queue
+  - Priority Queue
+  
+  - Hashmaps 
   
   p.s. the repo gets updated as soon as i learn new topics
