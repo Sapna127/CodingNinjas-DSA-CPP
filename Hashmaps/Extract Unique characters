@@ -1,0 +1,44 @@
+Given a string S, you need to remove all the duplicates. That means, the output string should contain each character only once. 
+The respective order of characters should remain same, as in the input string.
+
+------------------------
+
+#include<vector>
+#include<unordered_map>
+
+/*
+//approach 1
+string uniqueChar(string str) {
+	// Write your code here
+    string output;
+    unordered_map<char,bool> seen;
+    for(int i=0;str[i]!='\0';i++){
+        if(seen.count(str[i])>0){
+            continue;
+        }
+        seen[str[i]]=true;
+        output+=str[i];
+    }
+    
+    return output;
+}
+*/
+
+
+//approach 2
+//correct later
+string uniqueChar(string s){
+    // Write your code here
+ unordered_map<char,int> exists; 
+  int index = 0;  
+  for(int i=0;s[i]!='\0';i++)
+  { 
+    if(exists[s[i]]==0) 
+    { 
+      s[index++] = s[i]; 
+      exists[s[i]]++; 
+    } 
+  } 
+    s[index]='\0';
+  return s; 
+}
