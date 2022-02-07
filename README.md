@@ -17,4 +17,8 @@ Topicwise collection of all problems & their solutions from the coding ninjas DS
   
   - Hashmaps 
   
+  - Tries & Huffman
+  
+  - Backtracking
+  
   p.s. the repo gets updated as soon as i learn new topics
