@@ -11,6 +11,13 @@ Sample Input 2:
 Sample Output 2:
 1
 --------------
+//one line solution 
+int height(BinaryTreeNode<int>* root) {
+  return root == NULL ? 0 : max(height(root->left) , height(root->right)) + 1;
+}
+
+
+//approach 1
 int height(BinaryTreeNode<int>* root) {
     // Write our code here
     if(root==NULL)
