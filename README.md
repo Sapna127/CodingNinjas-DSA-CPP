@@ -1,4 +1,4 @@
-# CodingNinjas DSA CPP
+# Data Structures and algorithms in cpp
 Topicwise collection of all problems & their solutions from the coding ninjas DSA in cpp course
 
   - Arrays & Strings
@@ -17,7 +17,7 @@ Topicwise collection of all problems & their solutions from the coding ninjas DS
   
   - Hashmaps 
   
-  - Tries & Huffman
+  - Tries
   
   - Backtracking
   
